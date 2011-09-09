@@ -26,14 +26,22 @@ ul.ui-autocomplete.ui-menu li a:hover {
   text-decoration: none;
 }
 
-ul.ui-autocomplete.ui-menu li.ui-state-hover {
-  background: rgba(0, 0, 0, 0.20);
+ul.ui-autocomplete.ui-menu.ui-widget-content li.ui-menu-item a.ui-state-hover, 
+ul.ui-autocomplete.ui-menu.ui-widget-content li.ui-menu-item a.ui-state-focus, 
+ul.ui-autocomplete.ui-menu.ui-widget-content li.ui-menu-item a.ui-state-active {
+  background: #f3f3f3;
+  outline: #ddd solid 1px;
+  border:0;
 }
 
 ul.ui-autocomplete.ui-menu li:hover {
-  background: rgba(0, 0, 0, 0.20);
+  background: #f3f3f3;
+  border: 1px solid #ddd;
 }  
 
+ul.ui-autocomplete.ui-menu li a.ui-corner-all {
+	border-radius:0px;
+}
 /* Container */
 body > .container {min-height:650px;}
 

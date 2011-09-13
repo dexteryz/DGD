@@ -17,25 +17,27 @@
         = yield
         
       .span4.columns
-        .sidebar-info-box
-          .sidebar-header
-            %h3.title Dartmouth Group Directory
-          .sidebar-content
-            %p Welcome to the Dartmouth Group Directory, where your dreams come true. For real. This site is actually amazing beyond all belief.
-        .sidebar-info-box
-          .sidebar-header
-            %h3.title Recently Updated
-          .sidebar-content
-            - Group.recently_updated(5).each do |group|
-              =link_to group.name, group_path(group)
-        .sidebar-info-box
-          .sidebar-header
-            %h3.title Leaderboards
-          .sidebar-content
-            %p Welcome to the Dartmouth Group Directory, where your dreams come true. For real. This site is actually amazing beyond all belief.
+        = yield :sidebar
+            
+            
+            
+
 
   #footer
 
+
+
+
 :javascript
   var groups = #{@group_hash.to_json};
-  
+
+  // Google Analyt
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25681508-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();

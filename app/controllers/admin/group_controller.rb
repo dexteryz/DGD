@@ -17,7 +17,7 @@ class Admin::GroupController < AdminController
         db_group.save
       end
       
-      if form_group['name']!= db_group.name
+      if form_group['name'] != db_group.name
         db_group.name = form_group['name']
         db_group.save
       end

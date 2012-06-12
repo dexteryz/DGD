@@ -2,6 +2,7 @@ class GroupController < ApplicationController
   layout 'application'
   before_filter :group, :except => [:index, :about, :markdown, :leaderboard]
   before_filter :group_exec, :only => [:edit]
+  before_filter :random
 
 
   def index
@@ -60,7 +61,8 @@ class GroupController < ApplicationController
     @user_flag = Flag.find_by_description_id_and_user_id(@description, @current_user)
     @flag_count = Flag.find_all_by_description_id(@description).count
     @group_exec = GroupExec.find_by_group_id_and_user_id(@group, @current_user)
-    
+    @random = Group.find(rand(Group.count))
+
     # Hide email addresses if user isn't logged in
     if !@description.nil?
       @clean_description = Nokogiri::HTML::DocumentFragment.parse(@description.markdown)
@@ -108,6 +110,12 @@ class GroupController < ApplicationController
   
   def group
     @group = Group.includes(:descriptions).find(params[:id])
+  end
+
+  def random
+    @random = Group.find(rand(Group.count))
+    @random2 = Group.find(rand(Group.count))
+    @random3 = Group.find(rand(Group.count))
   end
   
 end

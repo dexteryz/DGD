@@ -1,5 +1,5 @@
 - content_for :sidebar do
-  = render :partial => "sidebar/directory"
+  = render :partial => "sidebar/directory", :locals => { :random => @random }
 
 
 #directory

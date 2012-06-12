@@ -5,11 +5,13 @@
 /     - Group.recently_updated(5).each do |group|
 /       =link_to group.name, group_path(group)
 / 
+
+
 .sidebar-info-box
   .sidebar-header
     %h3.title Editing Policy
   .sidebar-content
-    %p
+    %p 
       DGD is a community directory, so feel free to edit any page you feel you can improve. Remember, your name is permanently
       attached to any content you contribute to DGD.
 
@@ -18,10 +20,10 @@
     %h3.title Suggested Organizations
   .sidebar-content
     %ol
-    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
-    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
-    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
-  
+    %li= link_to @random.name.sub(/Dartmouth /,"").truncate(40), group_path(@random), {:style => add_color(@random)}
+    %li= link_to @random2.name.sub(/Dartmouth /,"").truncate(40), group_path(@random2), {:style => add_color(@random2)}
+    %li= link_to @random3.name.sub(/Dartmouth /,"").truncate(40), group_path(@random3), {:style => add_color(@random3)}
+
 
 .sidebar-info-box
   .sidebar-header

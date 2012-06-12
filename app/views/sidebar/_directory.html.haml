@@ -15,6 +15,16 @@
 
 .sidebar-info-box
   .sidebar-header
+    %h3.title Suggested Organizations
+  .sidebar-content
+    %ol
+    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
+    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
+    %li= link_to Group.find(rand(Group.count)).name.sub(/Dartmouth /,"").truncate(40), group_path(Group.find(rand(Group.count))), {:style => add_color(Group.find(rand(Group.count)))}
+  
+
+.sidebar-info-box
+  .sidebar-header
     %h3.title Leaderboard
   .sidebar-content
     %ol.leaderboard

@@ -24,7 +24,7 @@ gem "rspec-rails", :group => [:test, :development]
 
 group :test do
   gem 'sqlite3'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'turn', :require => false
 
   gem "factory_girl_rails"
@@ -37,7 +37,7 @@ group :development do
   gem 'heroku'
   gem 'sqlite3'
   gem 'haml-rails'
-  gem 'ruby-debug19', :require => 'ruby-debug'
+  #gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :production do

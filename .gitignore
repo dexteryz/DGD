@@ -9,4 +9,5 @@ tmp/
 
 /db/schema.rb
 .powenv
-
+DGD.sublime-project
+DGD.sublime-workspace

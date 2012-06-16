@@ -3,17 +3,15 @@
 %head
   %title= page_title
   = stylesheet_link_tag    "application"
-  = stylesheet_link_tag    "bootstrap-1.1.0.min"
-  = stylesheet_link_tag    "jquery-ui-1.8.13.custom.css"
   = javascript_include_tag "application"
   = csrf_meta_tags
 
 %body
-  
+
   .container
     .row
       = yield
-        
+
 
 :javascript
   var groups = #{Group.all.map {|g| {:label => g.name, :value => g.name, :id => g.id}}.to_json};
@@ -29,7 +27,7 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-  
+
   var intercomSettings = {
       app_id: 'h6b19gjf',
       email: 'jason.laster.11@gmail.com',

@@ -21,7 +21,7 @@ DGD::Application.configure do
   # (comment out if your front-end server doesn't support this)
   config.action_dispatch.x_sendfile_header = "X-Sendfile" # Use 'X-Accel-Redirect' for nginx
   # config.action_dispatch.x_sendfile_header = nil
-  
+
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -53,4 +53,16 @@ DGD::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # Rack::Cache configuration for Heroku
+  config.action_dispatch.rack_cache = {
+    :metastore    => Dalli::Client.new,
+    :entitystore  => 'file:tmp/cache/rack/body',
+    :allow_reload => false
+  }
+
+  config.serve_static_assets = true
+  config.static_cache_control = "public, max-age=2592000"
+  config.assets.digest = true
+  config.action_controller.perform_caching = true
 end

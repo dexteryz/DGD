@@ -105,5 +105,11 @@ class GroupController < ApplicationController
     @group = Group.includes(:descriptions).find(params[:id])
   end
 
+  def random
+    @random = Group.find(rand(Group.count))
+    @random2 = Group.find(rand(Group.count))
+    @random3 = Group.find(rand(Group.count))
+  end
+
 end
 

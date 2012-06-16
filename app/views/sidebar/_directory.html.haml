@@ -4,13 +4,7 @@
 /   .sidebar-content
 /     - Group.recently_updated(5).each do |group|
 /       =link_to group.name, group_path(group)
-<<<<<<< HEAD
-/ 
 
-
-=======
-/
->>>>>>> upstream/master
 .sidebar-info-box
   .sidebar-header
     %h3.title Editing Policy
@@ -19,7 +13,6 @@
       DGD is a community directory, so feel free to edit any page you feel you can improve. Remember, your name is permanently
       attached to any content you contribute to DGD.
 
-<<<<<<< HEAD
 .sidebar-info-box
   .sidebar-header
     %h3.title Suggested Organizations
@@ -40,7 +33,6 @@
           %li= descriptions.first.user.name
     %p= link_to "More", leaderboard_group_index_path
 
-=======
 / .sidebar-info-box
 /   .sidebar-header
 /     %h3.title Leaderboard
@@ -50,7 +42,6 @@
 /         - @leaderboard[0..4].each do |descriptions|
 /           %li= descriptions.first.user.name
 /     %p= link_to "More", leaderboard_group_index_path
->>>>>>> upstream/master
 
 - if @current_user.try(:admin)
   = render :partial => "sidebar/section/admin_toc"
